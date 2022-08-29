@@ -12,15 +12,15 @@ modelo.compile(
     loss='mean_squared_error'
 )
 
-print("Comenzando entrenamiento...")
+print("Realizando Entrenamiento...")
 historial = modelo.fit(celsius, fahrenheit, epochs=1000, verbose=False)
-print("Modelo entrenado!")
+print("Entrenamiento Completado!")
 
 import matplotlib.pyplot as plt
 plt.xlabel("# Epoca")
 plt.ylabel("Magnitud de pérdida")
 plt.plot(historial.history["loss"])
 
-print("Hagamos una predicción")
+print("Traduciendo grados celsius a fahrenheit")
 resultado = modelo.predict([73.0])
-print("El resultado es" + str(resultado) + " fahrenheit!")
+print("El resultado es" + str(resultado) + " fahrenheit...")
